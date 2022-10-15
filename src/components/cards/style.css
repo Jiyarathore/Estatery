@@ -1,0 +1,14 @@
+.content{
+    border: 2px solid red;
+    padding: 6rem;
+}
+.grid3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+.expl{
+    /* font-size: 0.2rem;
+    border: 2px solid red; */
+    color: gray;
+}
