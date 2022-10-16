@@ -2,108 +2,120 @@ import React, { useState } from 'react'
 import "./style.css";
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-const locations = [
+const property = [
     {
-        value: 'A',
-        label: 'A',
+        value: 'Housing',
+        label: 'Housing',
     },
     {
-        value: 'B',
-        label: 'B',
+        value: 'Rent',
+        label: 'Rent',
     },
     {
-        value: 'C',
-        label: 'C',
+        value: 'Office',
+        label: 'Office',
+    }
+];
+//"<$1000", "between $1000 to $2000", "between $2000 to $3000",">$3000"
+const price = [
+    {
+        value: '$1000',
+        label: '<$1000',
     },
     {
-        value: 'D',
-        label: 'D',
+        value: 'between $1000 to $2000',
+        label: 'between $1000 to $2000',
+    },
+    {
+        value: 'between $2000 to $3000',
+        label: 'between $2000 to $3000',
+    },
+    {
+        value: '>$3000',
+        label: '>$3000',
     },
 ];
-//: React.ChangeEvent<HTMLInputElement>
-function Filter() {
+function Filter(props) {
     const [data, setdata] = useState(["none", "none", "none", "none"])
 
-    // export default function SelectTextFields() {
-    const [loc, setLoc] = React.useState('A');
-
-    const handleChange = (event) => {
-        setLoc(event.target.value);
-    };
-
+    const [type, settype] = React.useState('');
+    const [startDate, setStartDate] = useState("none");
     return (
         <>
             <section className='hero'>
                 <div className='container'>
-                    <form action='' className='flex'>
+                    <div className='form flex'>
                         <div className='box'>
-                            {/* <TextField 
-                                id="outlined-basic" 
-                                value={data[0]==="none"?"":data[0]} 
-                                onChange={(e)=>{
-                                    setdata(e.target);
-                                }}
-                                label="Location" 
-                                variant="outlined" 
-                            /> */}
-                            {/* <span>Lomcation</span>
-                            <input type='text' placeholder='locatiom' /> */}
-
-                            <TextField
-                                id="outlined-select-currency"
-                                select
-                                label="location"
-                                value={loc}
-                                onChange={handleChange}
-                            >
-                                {locations.map((option) => (
-                                    <MenuItem key={option.value} value={option.value}>
-                                        {option.label}
-                                    </MenuItem>
-                                ))}
-                            </TextField>
-
-                        </div>
-                        <div className='box'>
-
                             <TextField
                                 id="outlined-basic"
-                                value={data[1] === "none" ? "" : data[1]}
+                                value={props.filter.location}
                                 onChange={(e) => {
-                                    setdata(e.target);
+                                    props.setFilter({ ...props.filter, "location": e.target.value });
                                 }}
-                                label="When"
+                                label="Location"
                                 variant="outlined"
                             />
                         </div>
                         <div className='box'>
-                            <TextField
+                            <DatePicker
+                                selected={startDate === "none" ? "" : startDate}
+                                placeholderText="When"
+                                onChange={(date: Date) => setStartDate(date)}
+                            />
+                        </div>
+                        <div className='box'>
+                            {/* <TextField
                                 id="outlined-basic"
                                 value={data[2] === "none" ? "" : data[2]}
                                 onChange={(e) => {
                                     setdata(e.target);
                                 }}
                                 label="Price"
+                                type="number"
+
                                 variant="outlined"
-                            />
+                            /> */}
+                            <TextField
+                                id="outlined-select-currency"
+                                select
+                                label="Price"
+                                value={props.filter.price}
+                                onChange={(e) => {
+                                    props.setFilter({ ...props.filter, "price": e.target.value });
+                                    console.log(e);
+                                }}
+                            >
+                                {price.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                        {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
                         </div>
                         <div className='box'>
                             <TextField
-                                id="outlined-basic"
-                                value={data[3] === "none" ? "" : data[3]}
-                                onChange={(e) => {
-                                    setdata(e.target);
-                                }}
+                                id="outlined-select-currency"
+                                select
                                 label="Property Type"
-                                variant="outlined"
-                            />
+                                value={type}
+                                onChange={(event) => {
+                                    settype(event.target.value);
+                                }}
+                            >
+                                {property.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                        {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
                         </div>
-                        <div className='box'>
-                            <button className='btn'>Search</button>
+                        <div className='box' onClick={props.handlefilter} >
+                            <button className='btn'>Apply</button>
                         </div>
-                    </form>
-
+                    </div>
                 </div>
             </section>
         </>
