@@ -1,11 +1,11 @@
 .content{
-    border: 2px solid red;
-    padding: 6rem;
+    /* border: 2px solid red; */
+    padding: 6rem 15rem 0rem 15rem;
 }
 .grid3{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
+    grid-gap: 50px;
 }
 .expl{
     /* font-size: 0.2rem;
