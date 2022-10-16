@@ -26,10 +26,10 @@ function Filter() {
     const [data, setdata] = useState(["none", "none", "none", "none"])
 
     // export default function SelectTextFields() {
-    const [currency, setCurrency] = React.useState('A');
+    const [loc, setLoc] = React.useState('A');
 
     const handleChange = (event) => {
-        setCurrency(event.target.value);
+        setLoc(event.target.value);
     };
 
     return (
@@ -54,7 +54,7 @@ function Filter() {
                                 id="outlined-select-currency"
                                 select
                                 label="location"
-                                value={currency}
+                                value={loc}
                                 onChange={handleChange}
                             >
                                 {locations.map((option) => (
