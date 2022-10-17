@@ -1,5 +1,4 @@
 .content{
-    /* border: 2px solid red; */
     padding: 6rem 15rem 5rem 15rem;
 }
 .grid3{
@@ -8,7 +7,9 @@
     grid-gap: 50px;
 }
 .expl{
-    /* font-size: 0.2rem;
-    border: 2px solid red; */
     color: gray;
+}
+
+.card:hover{
+    transform: translateY(-9px);
 }

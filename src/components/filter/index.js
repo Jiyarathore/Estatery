@@ -19,28 +19,26 @@ const property = [
         label: 'Office',
     }
 ];
-//"<$1000", "between $1000 to $2000", "between $2000 to $3000",">$3000"
 const price = [
     {
-        value: '$1000',
-        label: '<$1000',
+        value: '0-1,000',
+        label: 'less than $1000',
     },
     {
-        value: 'between $1000 to $2000',
+        value: '1,000-2,000',
         label: 'between $1000 to $2000',
     },
     {
-        value: 'between $2000 to $3000',
+        value: '2,000-3,000',
         label: 'between $2000 to $3000',
     },
     {
-        value: '>$3000',
+        value: '3,000-30,000,000',
         label: '>$3000',
     },
 ];
 function Filter(props) {
-    const [data, setdata] = useState(["none", "none", "none", "none"])
-
+    
     const [type, settype] = React.useState('');
     const [startDate, setStartDate] = useState("none");
     return (
@@ -67,17 +65,6 @@ function Filter(props) {
                             />
                         </div>
                         <div className='box'>
-                            {/* <TextField
-                                id="outlined-basic"
-                                value={data[2] === "none" ? "" : data[2]}
-                                onChange={(e) => {
-                                    setdata(e.target);
-                                }}
-                                label="Price"
-                                type="number"
-
-                                variant="outlined"
-                            /> */}
                             <TextField
                                 id="outlined-select-currency"
                                 select
@@ -85,7 +72,6 @@ function Filter(props) {
                                 value={props.filter.price}
                                 onChange={(e) => {
                                     props.setFilter({ ...props.filter, "price": e.target.value });
-                                    console.log(e);
                                 }}
                             >
                                 {price.map((option) => (
@@ -113,7 +99,7 @@ function Filter(props) {
                             </TextField>
                         </div>
                         <div className='box' onClick={props.handlefilter} >
-                            <button className='btn'>Apply</button>
+                            <button className='btn'>Search</button>
                         </div>
                     </div>
                 </div>

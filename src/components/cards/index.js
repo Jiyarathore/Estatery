@@ -23,53 +23,55 @@ export default function MediaCard(props) {
         {props.list.map((val, index) => {
           const { cover, location, name, price, beds, bathrooms, area } = val;
           return (
-            <Card sx={{ maxWidth: 305 }} key={index}>
-              <CardMedia
-                component="img"
-                height="140"
-                image={images[index]}
-                alt="house"
-              />
-              <CardContent>
-                <div className="price_tag flex">
-                  <Typography
-                    gutterBottom
-                    variant="h6"
-                    fontWeight="700"
-                    color="blueviolet"
-                    component="div"
-                  >
-                    {price}/month
+            <div className="card">
+              <Card sx={{ maxWidth: 305 }} key={index}>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={images[index]}
+                  alt="house"
+                />
+                <CardContent>
+                  <div className="price_tag flex">
+                    <Typography
+                      gutterBottom
+                      variant="h6"
+                      fontWeight="700"
+                      color="blueviolet"
+                      component="div"
+                    >
+                      {price}/month
+                    </Typography>
+                    <Typography>
+                      <i className="fa-regular fa-heart"></i>
+                    </Typography>
+                  </div>
+                  <Typography gutterBottom variant="h5" fontWeight="700">
+                    {name}
                   </Typography>
-                  <Typography>
-                    <i className="fa-regular fa-heart"></i>
+                  <Typography variant="body3" color="gray">
+                    {location}
                   </Typography>
-                </div>
-                <Typography gutterBottom variant="h5" fontWeight="700">
-                  {name}
-                </Typography>
-                <Typography variant="body3" color="gray">
-                  {location}
-                </Typography>
-                <br />
-                <hr />
-                <br />
-                <div className="expl flex">
-                  <Typography variant="body2">
-                    <i className="fa-solid fa-bed"></i>
-                    {beds} Beds
-                  </Typography>
-                  <Typography variant="body2">
-                    <i className="fa-solid fa-bath"></i>
-                    {bathrooms} Bathrooms
-                  </Typography>
-                  <Typography variant="body2">
-                    <i className="fa-regular fa-layer-group"></i>
-                    {area}
-                  </Typography>
-                </div>
-              </CardContent>
-            </Card>
+                  <br />
+                  <hr />
+                  <br />
+                  <div className="expl flex">
+                    <Typography variant="body2">
+                      <i className="fa-solid fa-bed"></i>
+                      {beds} Beds
+                    </Typography>
+                    <Typography variant="body2">
+                      <i className="fa-solid fa-bath"></i>
+                      {bathrooms} Bathrooms
+                    </Typography>
+                    <Typography variant="body2">
+                      <i className="fa-regular fa-layer-group"></i>
+                      {area}
+                    </Typography>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           );
         })}
       </div>

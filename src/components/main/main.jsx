@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Filter from '../filter';
 import MediaCard from '../cards';
-import { useState } from 'react';
 import "./main.css";
 import { list } from '../data/data';
 
@@ -16,60 +15,36 @@ function Main() {
   const locationfilter=(location)=>{
     let ans=[]
     list.map((e)=>{
-      if(e.location.toLowerCase()===location.toLowerCase()){
+      if(e.location.toLowerCase()===location.toLowerCase())
         ans.push(e);
-      }
-      console.log(e.location)
     })
-
     return ans;
   }
 
   const pricefilter=(price)=>{
-    let ans1=[]
+    let ans=[]
+    let a=price.split('-');
+    console.log(a);
     list.map((e)=>{
-
-      // console.log(e)
-      if(e.price===price){
-        ans1.push(e)
+      let b=e.price.substring(1);
+      console.log(b,a[0],a[1],b<a[1]);
+      if(b>a[0] && b<=a[1]){
+        ans.push(e);
       }
-
-      console.log(price)
     })
-    return ans1
+    return ans
   }
 
   const handlefilter=()=>{
+    if(filter.location!=="" && filter.price!==""){
+      setmainList(list);
+      return;
+    }
     if(filter.location!=="")
       setmainList(locationfilter(filter.location));
-    // else
-    //   setmainList(list);
-
-      if(filter.price!=="")
+    if(filter.price!=="")
       setmainList(pricefilter(filter.price));
-    else
-      setmainList(list);
   }
-// console.log("dbuo")
-  // const pricefilter=(price)=>{
-  //   let ans1=[]
-  //   list.map((e)=>{
-
-  //     // console.log(e)
-  //     if(e.price===price){
-  //       ans1.push(e)
-  //     }
-
-  //     console.log(price)
-  //   })
-  //   return ans1
-  // }
-  // const handlepricefilter=()=>{
-  //   if(filter.price!=="")
-  //     setmainList(pricefilter(filter.price));
-  //   else
-  //     setmainList(list);
-  // }
   return (
     <>
         <div className='search flex'>

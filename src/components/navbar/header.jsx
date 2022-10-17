@@ -8,7 +8,7 @@ function Header() {
             <header>
                 <div className='container flex'>
                     <div className='logo flex'>
-                    
+
                         <img src={estatery_logo} alt='' />
                         <h2>Estatery</h2>
                     </div>
@@ -22,14 +22,14 @@ function Header() {
                         </ul>
                     </div>
                     <div className='buttons flex'>
-                    <button className='btn1'>
-                    Login
-                    </button>
-                    <button className='btn2'>Sign up</button>
+                        <button className='btn1'>
+                            Login
+                        </button>
+                        <button className='btn2'>Sign up</button>
                     </div>
 
                 </div>
-                </header>
+            </header>
         </>
     )
 }

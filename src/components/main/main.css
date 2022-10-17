@@ -1,5 +1,4 @@
 .search{
-/* border: 2px solid red; */
 padding: 4rem 15rem 5rem 15rem;
 }
 .prty{
@@ -9,13 +8,7 @@ padding: 4rem 15rem 5rem 15rem;
 }
 .search_bar{
     border-radius: 5px;
-    /* padding: 13px 30px; */
-/* border: 2px solid blueviolet; */
-    /* border: none; */
     color: white;
-    /* cursor: pointer;
-    margin-right: 10px;
-    margin-left: 10px; */
 }
 .search_bar input{
     padding: 10px;
