@@ -12,22 +12,24 @@ function Main() {
     "price": "",
     "property_type": "",
   })
-  const locationfilter=(location)=>{
+  const locationfilter=(location, newlist)=>{
     let ans=[]
-    list.map((e)=>{
+    // console.log(mainList)
+    newlist.map((e)=>{
       if(e.location.toLowerCase()===location.toLowerCase())
-        ans.push(e);
+      ans.push(e);
     })
+    // console.log(ans)
     return ans;
   }
 
-  const pricefilter=(price)=>{
+  const pricefilter=(price, newlist)=>{
     let ans=[]
     let a=price.split('-');
-    console.log(a);
-    list.map((e)=>{
+    // console.log(a);
+    newlist.map((e)=>{
       let b=e.price.substring(1);
-      console.log(b,a[0],a[1],b<a[1]);
+      // console.log(b,a[0],a[1],b<a[1]);
       if(b>a[0] && b<=a[1]){
         ans.push(e);
       }
@@ -37,13 +39,18 @@ function Main() {
 
   const handlefilter=()=>{
     if(filter.location!=="" && filter.price!==""){
-      setmainList(list);
+      let ans=locationfilter(filter.location, list);
+      ans=pricefilter(filter.price, ans);
+      setmainList(ans);
       return;
     }
-    if(filter.location!=="")
-      setmainList(locationfilter(filter.location));
-    if(filter.price!=="")
-      setmainList(pricefilter(filter.price));
+    if(filter.location!==""){
+      setmainList(locationfilter(filter.location, list));
+      return;
+    }
+    if(filter.price!==""){
+      setmainList(pricefilter(filter.price, list));
+    }
   }
   return (
     <>

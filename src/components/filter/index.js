@@ -38,7 +38,6 @@ const price = [
     },
 ];
 function Filter(props) {
-    
     const [type, settype] = React.useState('');
     const [startDate, setStartDate] = useState("none");
     return (
@@ -47,59 +46,71 @@ function Filter(props) {
                 <div className='container'>
                     <div className='form flex'>
                         <div className='box'>
-                            <TextField
-                                id="outlined-basic"
-                                value={props.filter.location}
-                                onChange={(e) => {
-                                    props.setFilter({ ...props.filter, "location": e.target.value });
-                                }}
-                                label="Location"
-                                variant="outlined"
-                            />
+                            <div className="box-inside">
+                                <TextField
+                                    fullWidth
+                                    className='field'
+                                    id="outlined-basic"
+                                    value={props.filter.location}
+                                    onChange={(e) => {
+                                        props.setFilter({ ...props.filter, "location": e.target.value });
+                                    }}
+                                    label="Location"
+                                    variant="outlined"
+                                />
+                            </div>
+                        </div>
+                        <div className='box datepicker'>
+                            <div className="box-inside">
+                                <DatePicker
+                                    selected={startDate === "none" ? "" : startDate}
+                                    placeholderText="When"
+                                    onChange={(date: Date) => setStartDate(date)}
+                                />
+                            </div>
                         </div>
                         <div className='box'>
-                            <DatePicker
-                                selected={startDate === "none" ? "" : startDate}
-                                placeholderText="When"
-                                onChange={(date: Date) => setStartDate(date)}
-                            />
+                            <div className="box-inside">
+                                <TextField
+                                    fullWidth
+                                    id="outlined-select-currency"
+                                    select
+                                    label="Price"
+                                    value={props.filter.price}
+                                    onChange={(e) => {
+                                        props.setFilter({ ...props.filter, "price": e.target.value });
+                                    }}
+                                >
+                                    {price.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </div>
                         </div>
                         <div className='box'>
-                            <TextField
-                                id="outlined-select-currency"
-                                select
-                                label="Price"
-                                value={props.filter.price}
-                                onChange={(e) => {
-                                    props.setFilter({ ...props.filter, "price": e.target.value });
-                                }}
-                            >
-                                {price.map((option) => (
-                                    <MenuItem key={option.value} value={option.value}>
-                                        {option.label}
-                                    </MenuItem>
-                                ))}
-                            </TextField>
+                            <div className="box-inside">
+                                <TextField
+                                    fullWidth
+                                    id="outlined-select-currency"
+                                    select
+                                    label="Property Type"
+                                    value={type}
+                                    onChange={(event) => {
+                                        settype(event.target.value);
+                                    }}
+                                >
+                                    {property.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </div>
                         </div>
-                        <div className='box'>
-                            <TextField
-                                id="outlined-select-currency"
-                                select
-                                label="Property Type"
-                                value={type}
-                                onChange={(event) => {
-                                    settype(event.target.value);
-                                }}
-                            >
-                                {property.map((option) => (
-                                    <MenuItem key={option.value} value={option.value}>
-                                        {option.label}
-                                    </MenuItem>
-                                ))}
-                            </TextField>
-                        </div>
-                        <div className='box' onClick={props.handlefilter} >
-                            <button className='btn'>Search</button>
+                        <div className='box box-btn' onClick={props.handlefilter} >
+                            <button className='btn'>Apply</button>
                         </div>
                     </div>
                 </div>
