@@ -19,7 +19,7 @@ function Main() {
       if(e.location.toLowerCase()===location.toLowerCase())
       ans.push(e);
     })
-    // console.log(ans)
+    console.log(ans)
     return ans;
   }
 
@@ -36,11 +36,21 @@ function Main() {
     })
     return ans
   }
-
+  const prtyfilter=(property_type, newlist)=>{
+    let ans=[]
+    console.log(mainList)
+    newlist.map((e)=>{
+      if(e.property_type===property_type)
+      ans.push(e);
+    })
+    console.log(ans)
+    return ans;
+  }
   const handlefilter=()=>{
-    if(filter.location!=="" && filter.price!==""){
+    if(filter.location!=="" && filter.price!=="" && filter.property_type!=="" ){
       let ans=locationfilter(filter.location, list);
       ans=pricefilter(filter.price, ans);
+      ans=prtyfilter(filter.property_type,ans);
       setmainList(ans);
       return;
     }
@@ -50,15 +60,18 @@ function Main() {
     }
     if(filter.price!==""){
       setmainList(pricefilter(filter.price, list));
+      return;
+    }
+    if(filter.property_type!==""){
+      setmainList(prtyfilter(filter.property_type, list));
+      return;
     }
   }
   return (
     <>
-        <div className='search flex'>
+        <div className='search '>
         <div className='prty'>Search properties to rent</div>
-        <div className='search_bar'>
-            <input type='text' placeholder='Search with Search Bar'/><i className="fa-regular fa-circle-chevron-down"></i>
-        </div>
+        
         </div>
         <Filter filter={filter} setFilter={setFilter} handlefilter={handlefilter}  />
         <MediaCard list={mainList}/>

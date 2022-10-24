@@ -1,0 +1,12 @@
+.modem{
+    color: rgb(79, 119, 182);
+    font-size: 3rem;
+    text-align: center;
+    font-weight: lighter;
+    /* height: 150vh; */
+    margin-top: 2rem;
+    width: 60%;
+    margin-left: 25rem;
+    letter-spacing: 0.2em;
+    line-height: 1.4;
+}

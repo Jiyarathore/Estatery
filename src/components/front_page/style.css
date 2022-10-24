@@ -1,0 +1,14 @@
+/* .front img{
+    height: 70rem;
+    width: 100%;
+} */
+.front{
+    background-image: url('../../assets/bg.png'); 
+    height: 50rem;
+    /* height: 100%; */
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: space-around;
+}

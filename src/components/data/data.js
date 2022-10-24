@@ -1,92 +1,122 @@
 export const list = [
   {
     id: 1,
-    cover: "../../assets/list1.png",
     name: "Palm Harbor",
     location: "London",
     price: "$2,095",
     beds:"3",
     bathrooms:"2",
     area:"5*7 m2",
+    property_type:"Buy"
   },
   {
     id: 2,
-    cover: "../../assets/list2.png",
     name: "Beverly Springheld",
-    location: "Texas",
+    location: "India",
     price: "$2,700",
     beds:"4",
     bathrooms:"2",
     area:"6*7.5 m2",
+    property_type:"Sell"
   },
   {
     id: 3,
-    cover: "../../assets/list3.png",
     name: "Faulker Ave",
-    location: "India",
+    location: "Canada",
     price: "$4,860",
     beds:"4",
     bathrooms:"3",
     area:"8*10 m2",
+    property_type:"Rent"
   },
   {
     id: 4,
-    cover: "../../assets/list4.png",
     name: "Jeringbone fausy",
     location: "London",
     price: "$7,540",
     beds:"3",
     bathrooms:"2",
     area:"5*9 m2",
+    property_type:"commercial"
   },
   {
     id: 5,
-    cover: "../../assets/list5.png",
     name: "Lane Realty",
     location: "New York",
     price: "$4,850",
     beds:"6",
     bathrooms:"2",
     area:"9*7 m2",
+    property_type:"Sell"
   },
   {
     id: 6,
-    cover: "../../assets/list6.png",
     name: "Banyon Tree Realty",
-    location: "LA",
+    location: "Mexico",
     price: "$3,780",
     beds:"7",
     bathrooms:"4",
     area:"8*3 m2",
+    property_type:"Buy"
   },
   {
     id: 7,
-    cover: "../../assets/list6.png",
     name: "Banyon Tree Realty",
-    location: "New Jersey",
+    location: "India",
     price: "$3,780",
     beds:"7",
     bathrooms:"4",
     area:"8*3 m2",
+    property_type:"Commercial"
   },
   {
     id: 8,
-    cover: "../../assets/list6.png",
     name: "Banyon Tree Realty",
     location: "Canada",
     price: "$3,780",
     beds:"7",
     bathrooms:"4",
     area:"8*3 m2",
+    property_type:"Sell"
   },
   {
     id: 9,
-    cover: "../../assets/list6.png",
     name: "Banyon Tree Realty",
     location: "USA",
     price: "$3,780",
     beds:"7",
     bathrooms:"4",
     area:"8*3 m2",
+    property_type:"Buy"
+  },
+  {
+    id: 10,
+    name: "Royol Exprise",
+    location: "London",
+    price: "$2,580",
+    beds:"7",
+    bathrooms:"4",
+    area:"8*3 m2",
+    property_type:"Sell"
+  },
+  {
+    id: 11,
+    name: "Jefry Nire",
+    location: "Canada",
+    price: "$2,800",
+    beds:"7",
+    bathrooms:"4",
+    area:"8*3 m2",
+    property_type:"Rent"
+  },
+  {
+    id: 12,
+    name: "Balcone",
+    location: "London",
+    price: "$2,780",
+    beds:"7",
+    bathrooms:"4",
+    area:"8*3 m2",
+    property_type:"Buy"
   },
 ]

@@ -5,18 +5,22 @@ import MenuItem from '@mui/material/MenuItem';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const property = [
+const property_type = [
     {
-        value: 'Housing',
-        label: 'Housing',
+        value: 'Buy',
+        label: 'Buy',
+    },
+    {
+        value: 'Sell',
+        label: 'Sell',
     },
     {
         value: 'Rent',
         label: 'Rent',
     },
     {
-        value: 'Office',
-        label: 'Office',
+        value: 'Commercial',
+        label: 'Commercial',
     }
 ];
 const price = [
@@ -33,7 +37,7 @@ const price = [
         label: 'between $2000 to $3000',
     },
     {
-        value: '3,000-30,000,000',
+        value: '3,000-8,000',
         label: '>$3000',
     },
 ];
@@ -42,7 +46,7 @@ function Filter(props) {
     const [startDate, setStartDate] = useState("none");
     return (
         <>
-            <section className='hero'>
+            {/* <div className='hero'> */}
                 <div className='container'>
                     <div className='form flex'>
                         <div className='box'>
@@ -96,12 +100,15 @@ function Filter(props) {
                                     id="outlined-select-currency"
                                     select
                                     label="Property Type"
-                                    value={type}
-                                    onChange={(event) => {
-                                        settype(event.target.value);
+                                    value={props.filter.property_type}
+                                    // onChange={(event) => {
+                                    //     settype(event.target.value);
+                                    // }}
+                                    onChange={(e) => {
+                                        props.setFilter({ ...props.filter, "property_type": e.target.value });
                                     }}
                                 >
-                                    {property.map((option) => (
+                                    {property_type.map((option) => (
                                         <MenuItem key={option.value} value={option.value}>
                                             {option.label}
                                         </MenuItem>
@@ -114,7 +121,7 @@ function Filter(props) {
                         </div>
                     </div>
                 </div>
-            </section>
+            {/* </div> */}
         </>
     )
 }

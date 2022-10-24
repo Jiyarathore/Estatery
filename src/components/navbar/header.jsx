@@ -1,15 +1,17 @@
 import React from 'react';
 import "./header.css";
 import estatery_logo from '../../assets/estatery_logo.png';
+import RoofingIcon from '@mui/icons-material/Roofing';
 
 function Header() {
     return (
         <>
             <header>
-                <div className='container flex'>
+                <div className='containernav flex'>
                     <div className='logo flex'>
 
-                        <img src={estatery_logo} alt='' />
+                        {/* <img src={estatery_logo} alt='' /> */}
+                        <RoofingIcon/>
                         <h2>Estatery</h2>
                     </div>
                     <div className='nav'>

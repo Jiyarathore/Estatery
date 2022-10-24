@@ -1,16 +1,22 @@
-.hero .container {
-  background-color: white;
+ .container {
+  /* background-color: #fdfcf9; */
+  background-color: #eef4ff;
   width:100%;
+  display: flex;
+  justify-content: center;
+  height: 12rem;
+}
+/* .hero{
+  width: 80%;
+  background-color: black
+} */
+.form {
   box-shadow: 0 5px 30px rgb(0 22 84 / 10%);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  display: flex;
-  height: 8rem;
-}
-.form {
   background-color: #fff;
   border-radius: 5px;
   width: 80%;
-  height: 4rem;
+  height: 10rem;
   margin: auto;
 }
 .form .box {
@@ -37,14 +43,15 @@
   border-left: none;
 }
 .form .btn{
-  border-radius: 5px;
-  padding: 13px 30px;
-  background-color:  blueviolet;
+  border-radius: 1rem;
+  /* padding: -2rem -2rem; */
+  background-color:  rgb(237, 158, 74) ;
+  height: 3.8rem;
+  width: 7rem;
   border: none;
-  color: white;
+  color: rgb(10, 10, 10);
   cursor: pointer; 
-  margin-right: 10px;
-  margin-left: 10px; 
+  
 }
 .box-btn{
   margin: auto;

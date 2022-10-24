@@ -11,17 +11,20 @@ import image3 from "../../assets/list3.png";
 import image4 from "../../assets/list4.png";
 import image5 from "../../assets/list5.png";
 import image6 from "../../assets/list6.png";
-import image7 from "../../assets/list3.png";
-import image8 from "../../assets/list2.png";
-import image9 from "../../assets/list1.png";
+import image7 from "../../assets/list7.png";
+import image8 from "../../assets/list8.png";
+import image9 from "../../assets/list9.png";
+import image10 from "../../assets/list10.png";
+import image11 from "../../assets/list11.png";
+import image12 from "../../assets/list12.png";
 
 export default function MediaCard(props) {
-  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9];
+  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9,image10, image11, image12];
   return (
     <>
       <div className="content grid3">
         {props.list.map((val, index) => {
-          const { cover, location, name, price, beds, bathrooms, area } = val;
+          const { property_type, location, name, price, beds, bathrooms, area } = val;
           return (
             <div className="card">
               <Card sx={{ maxWidth: 305 }} key={index}>
@@ -37,7 +40,7 @@ export default function MediaCard(props) {
                       gutterBottom
                       variant="h6"
                       fontWeight="700"
-                      color="blueviolet"
+                      color="blue"
                       component="div"
                     >
                       {price}/month
@@ -52,7 +55,9 @@ export default function MediaCard(props) {
                   <Typography variant="body3" color="gray">
                     {location}
                   </Typography>
-                  <br />
+                  <Typography variant="body2" color="blueviolet">
+                    {property_type}
+                  </Typography>
                   <hr />
                   <br />
                   <div className="expl flex">

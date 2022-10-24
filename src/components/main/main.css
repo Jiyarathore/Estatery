@@ -1,5 +1,11 @@
 .search{
 padding: 4rem 15rem 5rem 15rem;
+background-color: #eef4ff;
+font-family: gotham,"Helvetica Neue",sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
 }
 .prty{
     font-size: 2rem;
