@@ -9,10 +9,6 @@ function Front() {
    <>
 <Header/>
    <div className='front'>
-    {/* <img src='https://sprec.com/wp-content/uploads/2016/07/home-mast.jpg'/>
-<Typography>
-MODERN SERVICED APARTMENTS: A PLACE TO CALL YOUR OWN — FOR HOWEVER LONG YOU STAY
-</Typography> */}
 <Content/>
    </div>
    </>

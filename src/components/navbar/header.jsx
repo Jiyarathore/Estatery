@@ -9,8 +9,6 @@ function Header() {
             <header>
                 <div className='containernav flex'>
                     <div className='logo flex'>
-
-                        {/* <img src={estatery_logo} alt='' /> */}
                         <RoofingIcon/>
                         <h2>Estatery</h2>
                     </div>

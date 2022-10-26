@@ -1,27 +1,29 @@
-.search{
-padding: 4rem 15rem 5rem 15rem;
-background-color: #eef4ff;
-font-family: gotham,"Helvetica Neue",sans-serif;
+.search {
+    padding: 4rem 15rem 5rem 15rem;
+    background-color: #eef4ff;
+    font-family: gotham, "Helvetica Neue", sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 0.2em;
     line-height: 1.5;
 }
-.prty{
+
+.prty {
     font-size: 2rem;
     font-weight: 500;
 
 }
-.search_bar{
+
+.search_bar {
     border-radius: 5px;
     color: white;
     margin-right: 90px;
 }
-.search_bar input{
+
+.search_bar input {
     padding: 10px;
     width: 120%;
     border: 1px solid rgba(128, 128, 128, 0.2);
     margin-top: 5px;
-    /* margin-right: 5px; */
     border-radius: 5px;
 }

@@ -1,15 +1,10 @@
  .container {
-  /* background-color: #fdfcf9; */
   background-color: #eef4ff;
   width:100%;
   display: flex;
   justify-content: center;
   height: 12rem;
 }
-/* .hero{
-  width: 80%;
-  background-color: black
-} */
 .form {
   box-shadow: 0 5px 30px rgb(0 22 84 / 10%);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

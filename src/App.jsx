@@ -6,7 +6,6 @@ import Front from './components/front_page'
 function App() {
   return (
    <>
-    {/* <Header/> */}
     <Front/>
     <Main/>
     
